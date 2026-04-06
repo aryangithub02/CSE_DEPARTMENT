@@ -7,6 +7,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.getElementById('app-container');
     const dataStream = document.getElementById('data-stream');
     const skipBtn = document.getElementById('skip-btn');
+    const sideNav = document.querySelector('.side-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // Setup Nav interactions
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        item.addEventListener('mouseenter', () => {
+            gsap.to(follower, { width: 60, height: 60, backgroundColor: 'rgba(0, 245, 255, 0.1)', duration: 0.3 });
+        });
+        item.addEventListener('mouseleave', () => {
+            gsap.to(follower, { width: 40, height: 40, backgroundColor: 'transparent', duration: 0.3 });
+        });
+    });
+
+    function updateActiveNav(id) {
+        navItems.forEach(item => {
+            if (item.dataset.target === id) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // HORIZONTAL SCROLL PROGRESS BAR UPDATE
+        const topProgressBar = document.getElementById('top-progress-bar');
+        if (topProgressBar) {
+            const docHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+            const windowHeight = window.innerHeight;
+            const scrollPercent = (scrollY / (docHeight - windowHeight)) * 100;
+            topProgressBar.style.width = Math.min(Math.max(scrollPercent, 0), 100) + '%';
+        }
+
+        if (document.body.style.overflow === 'hidden' || sectionData.length === 0) return;
+        
+        let currentId = '';
+        
+        sectionData.forEach(data => {
+            const sectionTop = data.top - (window.innerHeight / 2);
+            if (scrollY >= sectionTop) {
+                currentId = data.id;
+            }
+        });
+        
+        if (currentId) updateActiveNav(currentId);
+    });
 
     // 10X FEATURE: CUSTOM CURSOR
     const cursor = document.getElementById('cursor');
@@ -165,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scannerLine.style.display = 'block';
         scannerInfo.style.display = 'block';
         appContainer.classList.remove('blurred');
+        sideNav.classList.add('active');
         
         skipBtn.addEventListener('click', () => {
             tl.kill();
@@ -201,12 +261,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function checkCollisions(currentY) {
+        let activeId = '';
         sectionData.forEach(data => {
             if (!data.revealed && currentY >= data.top) {
                 data.revealed = true;
                 revealSection(data.element);
             }
+            if (currentY >= data.top - 200 && currentY < data.top + data.element.offsetHeight) {
+                activeId = data.id;
+            }
         });
+        if (activeId) updateActiveNav(activeId);
     }
 
     function animateStats() {
