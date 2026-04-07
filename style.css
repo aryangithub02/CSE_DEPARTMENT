@@ -808,17 +808,87 @@ h1, h2, h3, .info-label {
     transform: translateX(5px);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE & MOBILE OPTIMIZATION */
+
+/* Disable custom cursor universally on tablets, mobiles, and touch emulators */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+    .custom-cursor, .cursor-follower {
+        display: none !important;
+    }
+}
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1024px) {
+    .glitch { font-size: 3.5rem; }
+}
+
+/* Mobile Phones */
 @media (max-width: 768px) {
+    #app-container {
+        padding: 50px 15px !important;
+    }
+
+    .system-hud {
+        display: none; /* Reclaim space on small screens */
+    }
+
     .hod-grid, .vision-mission-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .hod-image-container {
         margin: 0 auto;
+        width: 100%;
+        max-width: 250px;
+        height: 250px;
     }
     
-    .glitch {
-        font-size: 2rem;
+    .glitch { font-size: 2.2rem; }
+    .glitch::before, .glitch::after { display: none; } /* Better performance on mobile */
+    .subtitle { font-size: 0.9rem; }
+    
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
     }
+    
+    .glass-card {
+        padding: 30px 20px;
+    }
+    
+    .faculty-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .faculty-image-container {
+        height: 180px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .stat-card {
+        padding: 20px 10px;
+    }
+    .stat-num { font-size: 2rem; }
+    
+    .boot-overlay h1 { font-size: 1.5rem; }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+    .tech-tags li {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+    .stats-grid, .faculty-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .glitch { font-size: 1.8rem; }
 }

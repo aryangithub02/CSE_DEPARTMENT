@@ -53,14 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
             topProgressBar.style.width = Math.min(Math.max(scrollPercent, 0), 100) + '%';
         }
 
-        if (document.body.style.overflow === 'hidden' || sectionData.length === 0) return;
+        if (document.body.style.overflow === 'hidden' || sections.length === 0) return;
         
         let currentId = '';
         
-        sectionData.forEach(data => {
-            const sectionTop = data.top - (window.innerHeight / 2);
+        sections.forEach(section => {
+            // Recalculate dynamic offsetTop in case responsive layouts or assets changed height
+            const sectionTop = section.offsetTop - (window.innerHeight * 0.4);
             if (scrollY >= sectionTop) {
-                currentId = data.id;
+                currentId = section.id;
             }
         });
         
