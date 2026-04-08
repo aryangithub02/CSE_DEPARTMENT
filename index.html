@@ -58,14 +58,34 @@
     <!-- 1. ENTRY / BOOT SCREEN -->
     <div id="boot-overlay" class="boot-screen">
         <div class="matrix-bg" id="matrix-canvas"></div>
+        <div class="boot-borders">
+            <div class="border-tl"></div>
+            <div class="border-tr"></div>
+            <div class="border-bl"></div>
+            <div class="border-br"></div>
+        </div>
         <div class="boot-content">
-            <h1 class="glitch" data-text="CSE // TGPCET">CSE // TGPCET</h1>
+            <div class="cyber-logo-container">
+                <div class="radar-scan"></div>
+                <h1 class="glitch" data-text="CSE // TGPCET">CSE // TGPCET</h1>
+            </div>
             <div class="terminal-loader">
                 <p id="boot-text">Initializing Department Scan...</p>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
+                <div class="progress-wrapper">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-percentage" id="progress-percent">0%</div>
                 </div>
             </div>
+        </div>
+        <div class="boot-sys-info left">
+            <p>SYS.VER_4.0.2b</p>
+            <p>NODE_STATUS: <span style="color:var(--success)">SECURE</span></p>
+        </div>
+        <div class="boot-sys-info right">
+            <p>TARGET: DEPT_CSE</p>
+            <p>THREAT_LVL: ZERO</p>
         </div>
     </div>
 
@@ -120,7 +140,7 @@
                 specializing in diverse domains of Computer Science, actively contributing to teaching, research, and
                 industry collaboration.</p>
             <div class="faculty-grid">
-                <div class="faculty-card">
+                <div class="faculty-card reveal-item">
                     <div class="faculty-image-container">
                         <img src="Brahmadev Wadibhasme Sir.jpg" alt="Prof. Brahmadev Wadibhasme">
                         <div class="scan-overlay"></div>
@@ -130,7 +150,7 @@
                         <p>Professor</p>
                     </div>
                 </div>
-                <div class="faculty-card">
+                <div class="faculty-card reveal-item">
                     <div class="faculty-image-container">
                         <img src="Aditya Lavhale Sir.jpg" alt="Prof. Aditya Lavhale">
                         <div class="scan-overlay"></div>
@@ -140,7 +160,7 @@
                         <p>Professor</p>
                     </div>
                 </div>
-                <div class="faculty-card">
+                <div class="faculty-card reveal-item">
                     <div class="faculty-image-container">
                         <img src="Nitin Khadane Sir.jpg" alt="Prof. Nitin Khadane">
                         <div class="scan-overlay"></div>
@@ -150,7 +170,7 @@
                         <p>Professor</p>
                     </div>
                 </div>
-                <div class="faculty-card">
+                <div class="faculty-card reveal-item">
                     <div class="faculty-image-container">
                         <img src="Snehal Rewatkar Ma'am.jpg" alt="Prof. Snehal Rewatkar">
                         <div class="scan-overlay"></div>
@@ -199,19 +219,19 @@
         <!-- STATS SECTION -->
         <section id="section-stats" class="scan-section" data-name="DATA_ANALYTICS">
             <div class="stats-grid">
-                <div class="stat-card glass-card">
+                <div class="stat-card glass-card reveal-item">
                     <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
                     <label>Expert Faculty</label>
                 </div>
-                <div class="stat-card glass-card">
+                <div class="stat-card glass-card reveal-item">
                     <span class="stat-num" data-target="5">0</span>
                     <label>Advanced Labs</label>
                 </div>
-                <div class="stat-card glass-card">
+                <div class="stat-card glass-card reveal-item">
                     <span class="stat-num" data-target="20">0</span><span class="stat-plus">+</span>
                     <label>Annual Events</label>
                 </div>
-                <div class="stat-card glass-card">
+                <div class="stat-card glass-card reveal-item">
                     <span class="stat-num" data-target="30">0</span><span class="stat-plus">+</span>
                     <label>Industry Projects</label>
                 </div>
@@ -243,28 +263,28 @@
             <div class="section-badge">GALLERY</div>
             <h2>Department Highlights</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item reveal-item">
                     <div class="gallery-image-wrapper">
                         <img src="One Day Seminar on Introduction to Competitive Programming by Mr. M. Krthikeya, Students IIT Madras.png"
                             alt="Seminar on Competitive Programming by Mr. M. Krthikeya, IIT Madras">
                     </div>
                     <div class="gallery-caption">Seminar on Competitive Programming by IIT Madras Alumni</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal-item">
                     <div class="gallery-image-wrapper">
                         <img src="Students and Faculty Photo During Visit at RCOEM-CIIIIT TATA Centre Nagpur.png"
                             alt="Industrial Visit at RCOEM-CIIIIT TATA Centre">
                     </div>
                     <div class="gallery-caption">Industrial Visit at RCOEM-CIIIIT TATA Centre Nagpur</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal-item">
                     <div class="gallery-image-wrapper">
                         <img src="Two Days Workshop on “Cyber Security” by Expert Mr. Amol Rangari, Cyber Consultant, Cognizant Nagpur..png"
                             alt="Cyber Security Workshop by Cognizant Expert">
                     </div>
                     <div class="gallery-caption">Two-Day Cyber Security Workshop by Cognizant Expert</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal-item">
                     <div class="gallery-image-wrapper">
                         <img src="Industrial Visit at Pragmatyc Global Pvt. Ltd. Mihan Nagpur.png"
                             alt="Industrial Visit at Pragmatyc Global Pvt. Ltd.">
@@ -277,13 +297,13 @@
         <!-- VISION MISSION SECTION -->
         <section id="section-vision" class="scan-section glass-card" data-name="CORE_PHILOSOPHY">
             <div class="vision-mission-grid">
-                <div class="vm-box">
+                <div class="vm-box reveal-item">
                     <h3 class="scramble" data-text="FUTURE DIRECTIVE (VISION)">FUTURE DIRECTIVE (VISION)</h3>
                     <p>To establish the department as a center of excellence in Computer Science & Engineering by
                         nurturing professionals capable of solving real-world problems and contributing to technological
                         advancement.</p>
                 </div>
-                <div class="vm-box">
+                <div class="vm-box reveal-item">
                     <h3 class="scramble" data-text="OPERATIONAL OBJECTIVES (MISSION)">OPERATIONAL OBJECTIVES (MISSION)
                     </h3>
                     <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">

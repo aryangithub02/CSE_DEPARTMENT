@@ -172,7 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. BOOT SEQUENCE
     const bootAnimation = () => {
-        gsap.to('.progress-fill', { width: '100%', duration: 3, ease: 'power4.inOut' });
+        const percentEl = document.getElementById('progress-percent');
+        gsap.to('.progress-fill', { 
+            width: '100%', 
+            duration: 3, 
+            ease: 'power4.inOut',
+            onUpdate: function() {
+                if (percentEl) {
+                    const currentWidth = this.targets()[0].style.width;
+                    percentEl.textContent = Math.round(parseFloat(currentWidth || 0)) + '%';
+                }
+            }
+        });
         
         const texts = [
             "Initializing Department Scan...",
@@ -207,7 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. SCANNING PHASE
     const sections = document.querySelectorAll('.scan-section');
+    const revealItems = document.querySelectorAll('.reveal-item');
     let sectionData = [];
+    let revealItemData = [];
 
     function prepareSections() {
         sectionData = Array.from(sections).map(section => ({
@@ -216,6 +229,20 @@ document.addEventListener('DOMContentLoaded', () => {
             top: section.offsetTop,
             revealed: false
         }));
+
+        revealItemData = Array.from(revealItems).map(item => {
+            let topPosition = 0;
+            let currentElement = item;
+            while (currentElement && currentElement !== appContainer) {
+                topPosition += currentElement.offsetTop;
+                currentElement = currentElement.offsetParent;
+            }
+            return {
+                element: item,
+                top: topPosition,
+                revealed: false
+            };
+        });
     }
 
     const startScanning = () => {
@@ -231,6 +258,12 @@ document.addEventListener('DOMContentLoaded', () => {
             tl.kill();
             sectionData.forEach(s => {
                 if(!s.revealed) revealSection(s.element);
+            });
+            revealItemData.forEach(s => {
+                if(!s.revealed) {
+                    s.revealed = true;
+                    s.element.classList.add('item-revealed');
+                }
             });
             gsap.to(scannerLine, { opacity: 0, duration: 0.5 });
             gsap.to(scannerInfo, { opacity: 0, duration: 0.5 });
@@ -273,6 +306,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         if (activeId) updateActiveNav(activeId);
+
+        revealItemData.forEach(data => {
+            if (!data.revealed && currentY >= data.top - 20) {
+                data.revealed = true;
+                data.element.classList.add('item-revealed');
+            }
+        });
     }
 
     function animateStats() {
