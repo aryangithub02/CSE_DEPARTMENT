@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;600;800&display=swap"
+        rel="stylesheet">
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
 
     <!-- HORIZONTAL SCROLL PROGRESS BAR -->
@@ -28,19 +32,28 @@
     <!-- SIDE NAVIGATION -->
     <nav class="side-nav">
         <ul id="nav-list">
-            <li data-target="section-hod" class="nav-item"><span class="nav-text">Leadership</span><span class="nav-dot"></span></li>
-            <li data-target="section-faculty" class="nav-item"><span class="nav-text">Faculty</span><span class="nav-dot"></span></li>
-            <li data-target="section-about" class="nav-item"><span class="nav-text">About</span><span class="nav-dot"></span></li>
-            <li data-target="section-stats" class="nav-item"><span class="nav-text">Data</span><span class="nav-dot"></span></li>
-            <li data-target="section-activities" class="nav-item"><span class="nav-text">Activities</span><span class="nav-dot"></span></li>
-            <li data-target="section-gallery" class="nav-item"><span class="nav-text">Gallery</span><span class="nav-dot"></span></li>
-            <li data-target="section-vision" class="nav-item"><span class="nav-text">Vision</span><span class="nav-dot"></span></li>
+            <li data-target="section-hod" class="nav-item"><span class="nav-text">Leadership</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-faculty" class="nav-item"><span class="nav-text">Faculty</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-about" class="nav-item"><span class="nav-text">About</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-stats" class="nav-item"><span class="nav-text">Data</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-activities" class="nav-item"><span class="nav-text">Activities</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-gallery" class="nav-item"><span class="nav-text">Gallery</span><span
+                    class="nav-dot"></span></li>
+            <li data-target="section-vision" class="nav-item"><span class="nav-text">Vision</span><span
+                    class="nav-dot"></span></li>
         </ul>
     </nav>
 
     <!-- Sound Effects (Hidden) -->
-    <audio id="scan-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto"></audio>
-    <audio id="boot-sound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" preload="auto"></audio>
+    <audio id="scan-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"
+        preload="auto"></audio>
+    <audio id="boot-sound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"
+        preload="auto"></audio>
 
     <!-- 1. ENTRY / BOOT SCREEN -->
     <div id="boot-overlay" class="boot-screen">
@@ -79,7 +92,7 @@
         </div>
 
         <!-- REVEAL SECTIONS -->
-        
+
         <!-- HOD SECTION -->
         <section id="section-hod" class="scan-section glass-card" data-name="HOD_DETECTION">
             <div class="section-badge">LEADERSHIP</div>
@@ -93,7 +106,8 @@
                     <h3 class="scramble" data-text="Head of Department, CSE">Head of Department, CSE</h3>
                     <p>"Driving innovation through technology, research, and academic excellence."</p>
                     <div class="stat-mini">QUALIFICATION: B.E., M.Tech</div>
-                    <div class="stat-mini" style="margin-top: 5px; color: var(--text-muted); font-size: 0.8rem;">FOCUS AREAS: Academic Leadership | Innovation | Industry Collaboration</div>
+                    <div class="stat-mini" style="margin-top: 5px; color: var(--text-muted); font-size: 0.8rem;">FOCUS
+                        AREAS: Academic Leadership | Innovation | Industry Collaboration</div>
                 </div>
             </div>
         </section>
@@ -102,7 +116,9 @@
         <section id="section-faculty" class="scan-section glass-card" data-name="FACULTY_ANALYSIS">
             <div class="section-badge">CORE FACULTY</div>
             <h2 class="scramble" data-text="Expert Faculty Network">Expert Faculty Network</h2>
-            <p style="margin-bottom: 30px; color: var(--text-muted);">A highly qualified and experienced faculty team specializing in diverse domains of Computer Science, actively contributing to teaching, research, and industry collaboration.</p>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">A highly qualified and experienced faculty team
+                specializing in diverse domains of Computer Science, actively contributing to teaching, research, and
+                industry collaboration.</p>
             <div class="faculty-grid">
                 <div class="faculty-card">
                     <div class="faculty-image-container">
@@ -151,17 +167,26 @@
         <section id="section-about" class="scan-section glass-card" data-name="DEPARTMENT_OVERVIEW">
             <div class="section-badge">ABOUT</div>
             <h2 class="scramble" data-text="Engineering Innovation Hub">Engineering Innovation Hub</h2>
-            <p>The CSE Department at TGPCET is a dynamic ecosystem focused on building technically strong, industry-ready engineers through a blend of academic rigor and practical exposure.</p>
-            
-            <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1rem; color: var(--primary);">KEY STRENGTHS</h3>
-            <ul style="list-style: none; margin-bottom: 25px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
-                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Hands-on learning with modern technologies</li>
-                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Strong industry interaction and exposure</li>
-                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Focus on innovation, research, and problem-solving</li>
-                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Active technical culture and collaborative environment</li>
+            <p>The CSE Department at TGPCET is a dynamic ecosystem focused on building technically strong,
+                industry-ready engineers through a blend of academic rigor and practical exposure.</p>
+
+            <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1rem; color: var(--primary);">KEY STRENGTHS
+            </h3>
+            <ul
+                style="list-style: none; margin-bottom: 25px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
+                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Hands-on learning with modern
+                    technologies</li>
+                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Strong industry interaction and
+                    exposure</li>
+                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Focus on innovation, research, and
+                    problem-solving</li>
+                <li><span style="color:var(--primary); margin-right:8px;">✔</span>Active technical culture and
+                    collaborative environment</li>
             </ul>
 
-            <h3 style="margin-top: 20px; font-size: 0.9rem; color: var(--primary); font-family: 'JetBrains Mono', monospace;">CORE TECHNOLOGY DOMAINS</h3>
+            <h3
+                style="margin-top: 20px; font-size: 0.9rem; color: var(--primary); font-family: 'JetBrains Mono', monospace;">
+                CORE TECHNOLOGY DOMAINS</h3>
             <ul class="tech-tags">
                 <li>Artificial Intelligence</li>
                 <li>Cloud Computing</li>
@@ -220,25 +245,29 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="One Day Seminar on Introduction to Competitive Programming by Mr. M. Krthikeya, Students IIT Madras.png" alt="Seminar on Competitive Programming by Mr. M. Krthikeya, IIT Madras">
+                        <img src="One Day Seminar on Introduction to Competitive Programming by Mr. M. Krthikeya, Students IIT Madras.png"
+                            alt="Seminar on Competitive Programming by Mr. M. Krthikeya, IIT Madras">
                     </div>
                     <div class="gallery-caption">Seminar on Competitive Programming by IIT Madras Alumni</div>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="Students and Faculty Photo During Visit at RCOEM-CIIIIT TATA Centre Nagpur.png" alt="Industrial Visit at RCOEM-CIIIIT TATA Centre">
+                        <img src="Students and Faculty Photo During Visit at RCOEM-CIIIIT TATA Centre Nagpur.png"
+                            alt="Industrial Visit at RCOEM-CIIIIT TATA Centre">
                     </div>
                     <div class="gallery-caption">Industrial Visit at RCOEM-CIIIIT TATA Centre Nagpur</div>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="Two Days Workshop on “Cyber Security” by Expert Mr. Amol Rangari, Cyber Consultant, Cognizant Nagpur..png" alt="Cyber Security Workshop by Cognizant Expert">
+                        <img src="Two Days Workshop on “Cyber Security” by Expert Mr. Amol Rangari, Cyber Consultant, Cognizant Nagpur..png"
+                            alt="Cyber Security Workshop by Cognizant Expert">
                     </div>
                     <div class="gallery-caption">Two-Day Cyber Security Workshop by Cognizant Expert</div>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="Industrial Visit at Pragmatyc Global Pvt. Ltd. Mihan Nagpur.png" alt="Industrial Visit at Pragmatyc Global Pvt. Ltd.">
+                        <img src="Industrial Visit at Pragmatyc Global Pvt. Ltd. Mihan Nagpur.png"
+                            alt="Industrial Visit at Pragmatyc Global Pvt. Ltd.">
                     </div>
                     <div class="gallery-caption">Industrial Visit at Pragmatyc Global Pvt. Ltd. Nagpur</div>
                 </div>
@@ -250,15 +279,22 @@
             <div class="vision-mission-grid">
                 <div class="vm-box">
                     <h3 class="scramble" data-text="FUTURE DIRECTIVE (VISION)">FUTURE DIRECTIVE (VISION)</h3>
-                    <p>To establish the department as a center of excellence in Computer Science & Engineering by nurturing professionals capable of solving real-world problems and contributing to technological advancement.</p>
+                    <p>To establish the department as a center of excellence in Computer Science & Engineering by
+                        nurturing professionals capable of solving real-world problems and contributing to technological
+                        advancement.</p>
                 </div>
                 <div class="vm-box">
-                    <h3 class="scramble" data-text="OPERATIONAL OBJECTIVES (MISSION)">OPERATIONAL OBJECTIVES (MISSION)</h3>
+                    <h3 class="scramble" data-text="OPERATIONAL OBJECTIVES (MISSION)">OPERATIONAL OBJECTIVES (MISSION)
+                    </h3>
                     <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
-                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Deliver high-quality education through effective teaching and hands-on learning</li>
-                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Develop ethical, innovative, and industry-ready professionals</li>
-                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Strengthen industry-academia collaboration</li>
-                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Encourage research, entrepreneurship, and lifelong learning</li>
+                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Deliver high-quality education
+                            through effective teaching and hands-on learning</li>
+                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Develop ethical, innovative,
+                            and industry-ready professionals</li>
+                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Strengthen industry-academia
+                            collaboration</li>
+                        <li><span style="color:var(--primary); margin-right:8px;">-</span>Encourage research,
+                            entrepreneurship, and lifelong learning</li>
                     </ul>
                 </div>
             </div>
@@ -266,15 +302,24 @@
 
         <!-- FOOTER / CTA -->
         <footer id="final-cta" class="final-reveal">
-            <h2 class="tagline scramble" data-text="System Scan Complete.">System Scan Complete.</h2>
-            <p style="margin-bottom: 40px; color: var(--text-muted); font-size: 1.1rem;">Explore the department to discover innovation, technology, and opportunities.</p>
-            <button class="cta-button" id="explore-btn">
+            <h2 class="tagline scramble" data-text="System Scan Complete.">
+                System Scan Complete.
+            </h2>
+
+            <p style="margin-bottom: 40px; color: var(--text-muted); font-size: 1.1rem;">
+                Explore the department to discover innovation, technology, and opportunities.
+            </p>
+
+            <a href="https://tgpcet.edu.in/CSE-dept.php" class="cta-button" id="explore-btn">
                 <span>Explore Department</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </footer>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
